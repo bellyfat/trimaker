@@ -160,7 +160,8 @@ class SingleTriArbMakerDeal(object):
                 ]))
             print()
 
-            if current_result[0]["result"] < self.threshold:
+            if current_result[0]["result"] < self.threshold and (self.order1.filled_start_amount >= 0.003
+                                                                 or self.order1.filled_start_amount < 0.00000001):
                 self.log(self.LOG_INFO,
                          "Result is below threshold {}. Forcing cancellation of the order.".format(
                                current_result[0]["result"]))
@@ -350,7 +351,7 @@ class TriArbMakerCollection(object):
         for deal in self.deals:
             if new_deal.current_triangle == deal.current_triangle:
                 deals_count += 1
-                if deals_count > 1:
+                if deals_count >= 1:
                     return "Too many deals with this triangle"
 
                 # if deal.currency1 == new_deal.currency1 and deal.currency2 == new_deal.currency2:
