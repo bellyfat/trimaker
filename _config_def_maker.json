@@ -10,32 +10,16 @@
   "max_ticker_amount_to_add": 3,
 
   "share_balance_to_bid":0.8,
-  "max_recovery_attempts": 20,
-  "min_amounts":
-    {"BTC": 0.002, "ETH": 0.02, "BNB": 1, "USDT": 20},
 
   "commission" : 0.00075,
   "commission_maker" : 0.0006,
 
   "threshold" : 1.0005,
-  "threshold_order_book" : 1.005,
   "recover_factor":1.004,
-
-  "balance_bid_thresholds" : {
-    "ETH":
-        [{"max_bid": 5,"result_threshold": 1.0005, "orderbook_result_threshold": 1.0005},
-         {"max_bid": 10, "result_threshold": 1.01, "orderbook_result_threshold": 1.01}],
-
-    "BTC":
-        [{"max_bid": 0.5,"result_threshold": 1.0005, "orderbook_result_threshold": 1.0005},
-         {"max_bid": 1, "result_threshold": 1.01, "orderbook_result_threshold": 1.01}]
-    },
 
   "api_key": {"apiKey": "testApiKey",
            "secret": "testApiSecret"},
 
-  "max_past_triangles" : 100,
-  "good_consecutive_results_threshold":2,
   "lap_time" : 60,
   "max_requests_per_lap": 1500,
   "sleep_on_tickers_error": 0.1,
